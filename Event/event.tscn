@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://evsl182kr3qc"]
+
+[ext_resource type="Script" uid="uid://t1elwqtos54x" path="res://addons/RPG_Baker/Event/event.gd" id="1_joaph"]
+
+[node name="Event" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_joaph")
+character_index = null
+direction = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+hframes = 12
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
