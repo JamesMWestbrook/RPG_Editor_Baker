@@ -41,7 +41,7 @@ grow_vertical = 2
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(237.145, 0)
 layout_mode = 2
-scroll_vertical = 326
+scroll_vertical = 100
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
 layout_mode = 2
@@ -353,20 +353,20 @@ anchor_bottom = 1.0
 offset_top = 31.0
 grow_horizontal = 2
 grow_vertical = 2
-scroll_offset = Vector2(-452, 0)
+right_disconnects = true
 script = ExtResource("2_bx1dw")
 popup_menu = NodePath("../../../../../PopupMenu")
 
-[node name="GraphNode" type="GraphNode" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit"]
+[node name="InteractGraphNode" type="GraphNode" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit"]
 layout_mode = 2
-offset_left = 474.0
+offset_left = 22.0
 offset_top = 137.0
-offset_right = 679.0
+offset_right = 227.0
 offset_bottom = 289.0
 mouse_filter = 1
 position_offset = Vector2(22, 137)
 draggable = false
-title = "Start"
+title = "Interact"
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color(1, 1, 1, 1)
@@ -377,10 +377,34 @@ slot/0/right_color = Color(1, 1, 1, 1)
 slot/0/right_icon = null
 slot/0/draw_stylebox = true
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit/GraphNode"]
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit/InteractGraphNode"]
+layout_mode = 2
+
+[node name="TouchGraphNode" type="GraphNode" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit"]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 453.0
+offset_right = 227.0
+offset_bottom = 605.0
+mouse_filter = 1
+position_offset = Vector2(22, 453)
+draggable = false
+title = "Touch"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit/TouchGraphNode"]
 layout_mode = 2
 
 [connection signal="index_pressed" from="PopupMenu/PopupMenuList/MessagePopupMenu" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_message_popup_menu_index_pressed"]
 [connection signal="connection_request" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_connection_request"]
 [connection signal="connection_to_empty" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_connection_to_empty"]
+[connection signal="disconnection_request" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_disconnection_request"]
 [connection signal="gui_input" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_gui_input"]
