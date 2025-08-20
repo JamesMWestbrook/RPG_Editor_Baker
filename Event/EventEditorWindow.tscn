@@ -1,0 +1,386 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr1knd8fctcmh"]
+
+[ext_resource type="Script" uid="uid://bfu0nod1fuiqx" path="res://addons/RPG_Baker/Event/event_editor_window.gd" id="1_72r8x"]
+[ext_resource type="Script" uid="uid://b3bv3u0b5e8wu" path="res://addons/RPG_Baker/Event/event_graph_edit.gd" id="2_bx1dw"]
+[ext_resource type="Script" uid="uid://cfwrff22w8cli" path="res://addons/RPG_Baker/Event/popup_menu.gd" id="2_dvwx6"]
+[ext_resource type="Texture2D" uid="uid://dtmg6im6vp32p" path="res://icon.svg" id="3_me78x"]
+
+[node name="EventEditorWindow" type="Window"]
+initial_position = 4
+size = Vector2i(1230, 605)
+popup_window = true
+script = ExtResource("1_72r8x")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+script = ExtResource("2_dvwx6")
+
+[node name="PopupMenuList" type="PopupMenu" parent="PopupMenu"]
+size = Vector2i(162, 413)
+
+[node name="MessagePopupMenu" type="PopupMenu" parent="PopupMenu/PopupMenuList"]
+size = Vector2i(170, 143)
+item_count = 5
+item_0/text = "Show Text"
+item_0/id = 0
+item_1/text = "Show Choices"
+item_1/id = 1
+item_2/text = "Input Number"
+item_2/id = 2
+item_3/text = "Select Item"
+item_3/id = 3
+item_4/text = "Show Scrolling Text"
+item_4/id = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(237.145, 0)
+layout_mode = 2
+scroll_vertical = 326
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Node Name:"
+
+[node name="NameLineEdit" type="LineEdit" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(224.35, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Notetag:"
+
+[node name="NoteTagLineEdit" type="LineEdit" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(224.35, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Conditions[/b]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="SwitchCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Switch"
+
+[node name="SwitchOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Switch2CheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "Switch"
+
+[node name="Switch2OptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VarCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Variable"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+
+[node name="VarOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+prefix = "≥"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="SelfSwitchCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+text = "Self Switch"
+
+[node name="SelfSwitchOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "C"
+popup/item_2/id = 2
+popup/item_3/text = "D"
+popup/item_3/id = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ItemCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+text = "Item"
+
+[node name="ItemOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ActorCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer6"]
+layout_mode = 2
+text = "Actor"
+
+[node name="ActorOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer6"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "C"
+popup/item_2/id = 2
+popup/item_3/text = "D"
+popup/item_3/id = 3
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Image"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="SpriteTextureRect" type="TextureRect" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_me78x")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer7"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer7/VBoxContainer"]
+layout_mode = 2
+text = "Single
+Sprite"
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer7/VBoxContainer"]
+layout_mode = 2
+prefix = "Index"
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer7/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Down"
+popup/item_0/id = 0
+popup/item_1/text = "Up"
+popup/item_1/id = 1
+popup/item_2/text = "Left"
+popup/item_2/id = 2
+popup/item_3/text = "Right"
+popup/item_3/id = 3
+
+[node name="Label4" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Auto Set to Actor:"
+
+[node name="ActorOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer8"]
+layout_mode = 2
+text = "Auto Set to Party
+Member Index:"
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer8"]
+layout_mode = 2
+tooltip_text = "-1 to disable. 1 or above to set to that party member index. If it's out of an array's range, it will take the last spot in the party's graphic and print a log."
+min_value = -1.0
+value = -1.0
+
+[node name="Label5" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Autonomous Movement"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+text = "Type:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+
+[node name="MoveTypeOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer9/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Custom is not implemented yet. "
+item_count = 4
+popup/item_0/text = "Fixed"
+popup/item_0/id = 0
+popup/item_1/text = "Random"
+popup/item_1/id = 1
+popup/item_2/text = "Approach"
+popup/item_2/id = 2
+popup/item_3/text = "Custom"
+popup/item_3/id = 3
+
+[node name="RouteButton" type="Button" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer9/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Route"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer10"]
+layout_mode = 2
+text = "Speed: "
+
+[node name="SpeedOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer10"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer11"]
+layout_mode = 2
+text = "Frequency"
+
+[node name="FrequencyOptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2/HBoxContainer11"]
+layout_mode = 2
+
+[node name="WalkingCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Walking"
+
+[node name="SteppingCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Stepping"
+
+[node name="DirFixCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Direction Fix"
+
+[node name="ThroughCheckBox" type="CheckBox" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Through"
+
+[node name="Label6" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Priority"
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Below Characters"
+popup/item_0/id = 0
+popup/item_1/text = "Same as Characters"
+popup/item_1/id = 1
+popup/item_2/text = "Above Characters"
+popup/item_2/id = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NewEventButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "New Event Page"
+
+[node name="CopyEventButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Copy Event Page"
+
+[node name="PasteEventButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Paste Event Page"
+
+[node name="DeleteEventPageButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Delete Event Page"
+
+[node name="ClearEventButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Clear Event Page"
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+drag_to_rearrange_enabled = true
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GraphEdit" type="GraphEdit" parent="HBoxContainer/VBoxContainer/TabContainer/Control" node_paths=PackedStringArray("popup_menu")]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_offset = Vector2(-452, 0)
+script = ExtResource("2_bx1dw")
+popup_menu = NodePath("../../../../../PopupMenu")
+
+[node name="GraphNode" type="GraphNode" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit"]
+layout_mode = 2
+offset_left = 474.0
+offset_top = 137.0
+offset_right = 679.0
+offset_bottom = 289.0
+mouse_filter = 1
+position_offset = Vector2(22, 137)
+draggable = false
+title = "Start"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit/GraphNode"]
+layout_mode = 2
+
+[connection signal="index_pressed" from="PopupMenu/PopupMenuList/MessagePopupMenu" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_message_popup_menu_index_pressed"]
+[connection signal="connection_request" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_connection_request"]
+[connection signal="connection_to_empty" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_connection_to_empty"]
+[connection signal="gui_input" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_gui_input"]

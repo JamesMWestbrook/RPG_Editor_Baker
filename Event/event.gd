@@ -1,5 +1,6 @@
 @tool
 extends CharacterBody2D
+class_name Event
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 
@@ -41,8 +42,9 @@ func _ready() -> void:
 	_set_sprite(character_index)
 	
 func _set_sprite(value):
-	if value >= 5:
-		sprite_2d.frame = 3 * value + 34 + direction
+	if sprite_2d:
+		if value >= 5:
+			sprite_2d.frame = 3 * value + 34 + direction
 
-	else:
-		sprite_2d.frame = 3 * value - 2 + direction
+		else:
+			sprite_2d.frame = 3 * value - 2 + direction
