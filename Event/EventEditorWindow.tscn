@@ -407,4 +407,3 @@ layout_mode = 2
 [connection signal="connection_request" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_connection_request"]
 [connection signal="connection_to_empty" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_connection_to_empty"]
 [connection signal="disconnection_request" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_disconnection_request"]
-[connection signal="gui_input" from="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" to="HBoxContainer/VBoxContainer/TabContainer/Control/GraphEdit" method="_on_gui_input"]
